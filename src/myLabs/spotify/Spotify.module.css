@@ -11,6 +11,14 @@ White: #FFF
   justify-content: space-between;
   align-items: center;
 }
+#btnGoBack {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  color: #fff;
+  font-size: 16px;
+  text-decoration: none;
+}
 
 .spotifyBrand {
   width: 100px;

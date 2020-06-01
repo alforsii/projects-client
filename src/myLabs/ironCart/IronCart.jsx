@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
-import './IronCart';
+import uuid from 'react-uuid';
 import ironCart from './IronCart.module.scss';
 
 export default function IronCart() {
+  const [state, setState] = useState({
+    total: 0,
+  });
   const [products, setProducts] = useState([
     {
       id: 1,
@@ -19,9 +22,50 @@ export default function IronCart() {
       subtotal: 0,
     },
   ]);
-  const [newProduct, setNewProduct] = useState({});
+  const [newProduct, setNewProduct] = useState({
+    id: null,
+    name: '',
+    price: 0,
+    quantity: 0,
+    subtotal: 0,
+  });
 
-  const handleChange = (event) => {};
+  const handleNewProd = ({ target: { name, value } }) => {
+    setNewProduct({ ...newProduct, [name]: value });
+  };
+
+  const addNewProd = () => {
+    if (!newProduct.name || !newProduct.price) {
+      alert('Please enter product name and price!');
+      return;
+    }
+    setProducts([...products, { ...newProduct, id: uuid() }]);
+    setNewProduct({ ...newProduct, id: null, name: '', price: 0 });
+  };
+
+  const removeProduct = (id) => {
+    const updatedProducts = products.filter((product) => product.id !== id);
+    setProducts(updatedProducts);
+  };
+
+  const handleChange = ({ target: { value } }, id) => {
+    const updatedProducts = products.map((product) => {
+      if (product.id === id) {
+        return {
+          ...product,
+          quantity: value,
+          subtotal: value * product.price,
+        };
+      }
+      return product;
+    });
+    setProducts(updatedProducts);
+  };
+
+  const calcAll = () => {
+    const total = products.reduce((acc, prod) => acc + prod.subtotal, 0);
+    setState({ ...state, total });
+  };
 
   return (
     <div className={ironCart.body}>
@@ -50,7 +94,7 @@ export default function IronCart() {
                   <input
                     type="number"
                     value={product.quantity}
-                    onChange={handleChange}
+                    onChange={(e) => handleChange(e, product.id)}
                   />
                 </td>
                 <td className="subtotal">
@@ -58,6 +102,7 @@ export default function IronCart() {
                 </td>
                 <td className="action">
                   <button
+                    onClick={() => removeProduct(product.id)}
                     className={`${ironCart.btnRemove} ${ironCart.btn} btnRemove`}
                   >
                     Remove
@@ -71,15 +116,27 @@ export default function IronCart() {
         <tfoot>
           <tr className="create-product">
             <td>
-              <input type="text" placeholder="Product Name" />
+              <input
+                onChange={handleNewProd}
+                value={newProduct.name}
+                type="text"
+                name="name"
+                placeholder="Product Name"
+              />
             </td>
             <td>
-              <input type="number" placeholder="0" />
+              <input
+                onChange={handleNewProd}
+                value={newProduct.price}
+                name="price"
+                type="number"
+                placeholder="0"
+              />
             </td>
             <td></td>
             <td></td>
             <td>
-              <button id="create" className={ironCart.brn}>
+              <button id="create" onClick={addNewProd} className={ironCart.brn}>
                 Create Product
               </button>
             </td>
@@ -88,6 +145,7 @@ export default function IronCart() {
       </table>
       <div className={ironCart.calculateTotal}>
         <button
+          onClick={calcAll}
           id={`calculate`}
           className={`${ironCart.btnRemove} ${ironCart.btn} btnRemove`}
         >
@@ -95,7 +153,7 @@ export default function IronCart() {
         </button>
       </div>
       <h2 id="total-value">
-        Total: $<span>0</span>
+        Total: $<span> {state.total} </span>
       </h2>
     </div>
   );

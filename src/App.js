@@ -23,6 +23,11 @@ class App extends React.Component {
         <Link to="/labs/spotify">Spotify</Link>
         {' ... '}
         <Link to="/labs/ironcart">IronCart</Link>
+        {' ... '}
+        <a id="btnGoBack" href="https://alforsii.github.io/redoLabs/">
+          Labs_inOriginal_HTML
+        </a>
+
         <Switch>
           <Route
             exact
@@ -45,6 +50,7 @@ class App extends React.Component {
             render={(props) => <IronCart {...props} />}
           />
           <Route exact path="/" render={(props) => <Home {...props} />} />
+          <Route path="/labs/" render={(props) => props.history.goBack()} />
         </Switch>
       </div>
     );

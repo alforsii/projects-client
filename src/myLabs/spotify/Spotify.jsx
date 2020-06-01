@@ -107,7 +107,11 @@ export default function Spotify() {
             </p>
           </div>
         </div>
-        <img id={spotify.footerImg} src="../images/spotify/spotify-app.jpg" />
+        <img
+          id={spotify.footerImg}
+          src="../images/spotify/spotify-app.jpg"
+          alt="spotify-icon"
+        />
         <img
           id={spotify.logoWhite}
           src="../images/spotify/spotify-icon-white.png"

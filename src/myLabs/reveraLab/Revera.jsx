@@ -247,9 +247,7 @@ export default function index() {
         <h3>
           LATEST PROJECTS
           <br />
-          <small className="text-muted">
-            FEW OF THE LATEST PORTFOLIO ITEMS
-          </small>
+          <small>FEW OF THE LATEST PORTFOLIO ITEMS</small>
         </h3>
         <hr />
         <div className={`${revera.showcaseFooterRow} row`}>
@@ -319,7 +317,7 @@ export default function index() {
         <h3>
           LATEST ARTICLES
           <br />
-          <small className="text-muted">LATEST POSTS FROM THE BLOG</small>
+          <small>LATEST POSTS FROM THE BLOG</small>
         </h3>
         <hr />
         <div className="row">
@@ -338,7 +336,7 @@ export default function index() {
                     diam
                   </b>
                 </p>
-                <h6 className={revera.h6} className="text-muted">
+                <h6 className={`${revera.h6} text-muted`}>
                   POSTED ON{' '}
                   <span className={revera.spanRed}>
                     <a href="!#">AUGUST 19, 2013</a>
@@ -371,7 +369,7 @@ export default function index() {
                 <p>
                   <b>Falauris sollicitudin quis dolor venenatis facilisis</b>
                 </p>
-                <h6 className={revera.h6} className="text-muted">
+                <h6 className={`${revera.h6} text-muted`}>
                   POSTED ON{' '}
                   <span className={revera.spanRed}>
                     <a href="!#">AUGUST 19, 2013</a>
@@ -404,7 +402,7 @@ export default function index() {
                 <p>
                   <b>Suspendisse ornare, felis feugiat suscipit pharetra</b>
                 </p>
-                <h6 className={revera.h6} className="text-muted">
+                <h6 className={`${revera.h6} text-muted`}>
                   POSTED ON{' '}
                   <span className={revera.spanRed}>
                     <a href="!#">AUGUST 19, 2013</a>
@@ -432,7 +430,7 @@ export default function index() {
                 <p>
                   <b>Festibulum purus odio, ornare non posuere</b>
                 </p>
-                <h6 className={revera.h6} className="text-muted">
+                <h6 className={`${revera.h6} text-muted`}>
                   POSTED ON{' '}
                   <span className={revera.spanRed}>
                     <a href="!#">AUGUST 19, 2013</a>
@@ -462,7 +460,7 @@ export default function index() {
         <div className="container">
           <div className="row">
             <div className="col-sm">
-              <h6 className={revera.h6}>REVERA</h6>
+              <h6 className={`${revera.h6} text-muted`}>REVERA</h6>
               <p>
                 Cum sociis natoque penatibus et magnis dis parturient montes,
                 nascetur ridiculus mus. Vestibulum vehicula erat non congue
@@ -473,7 +471,7 @@ export default function index() {
               </p>
             </div>
             <div className="col-sm">
-              <h6 className={revera.h6}>META</h6>
+              <h6 className={`${revera.h6} text-muted`}>META</h6>
               <p>
                 <a href="!#">Log in</a>
               </p>
@@ -488,13 +486,13 @@ export default function index() {
               </p>
             </div>
             <div className="col-sm">
-              <h6 className={revera.h6}>ARCHIVES</h6>
+              <h6 className={`${revera.h6} text-muted`}>ARCHIVES</h6>
               <p>
                 <a href="!#">August 2013</a>
               </p>
             </div>
             <div className="col-sm">
-              <h6 className={revera.h6}>RECENT POSTS</h6>
+              <h6 className={`${revera.h6} text-muted`}>RECENT POSTS</h6>
               <p>
                 <a href="!#">
                   Etiam mauris tortor, pharetra quis lobortis in, pharetra in
