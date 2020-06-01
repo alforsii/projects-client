@@ -1,0 +1,119 @@
+/* #FF4500 - orange red */
+
+.navbar {
+  height: 100px;
+  /* padding-top: 50px; */
+  display: flex;
+  justify-content: space-around;
+  /* flex-wrap: wrap; */
+  align-items: center;
+}
+.navbarBrand {
+  font-size: 40px;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+#myNavLink:hover {
+  color: red;
+}
+#navbarDropdownMenuLink:hover {
+  color: red;
+}
+.carouselCaption h5 {
+  font-size: 25px;
+  color: #fff;
+}
+.carouselCaption p {
+  font-size: 18px;
+}
+.carouselCaption {
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+.showcaseFooter {
+  background-color: #ff4500;
+  width: 100vw;
+  margin-bottom: 50px;
+  padding: 0 70px;
+}
+.showcaseFooter h1,
+.showcaseFooter h3 {
+  text-align: center;
+  color: #fff;
+}
+.showcaseFooter p {
+  color: #fff;
+  text-align: center;
+}
+.showcaseFooterRow {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  color: #fff;
+}
+.cardImgTop {
+  margin-bottom: 10px;
+}
+.h6 {
+  font-size: 14px;
+}
+.cardText {
+  font-size: 14px;
+  color: #333;
+}
+.spanRed a {
+  color: #ff4500;
+}
+.hrRed {
+  background-color: #ff4500;
+  height: 3px;
+}
+
+.footer {
+  background-color: #444;
+  color: #fff;
+}
+.footer h6 {
+  color: #fff;
+  margin-top: 20px;
+}
+.footer a {
+  color: rgb(192, 190, 190);
+  font-size: 14px;
+
+  padding: 5px 0;
+}
+.footer a:hover {
+  color: #fff;
+  text-decoration: none;
+}
+.footer p {
+  font-size: 14px;
+  color: rgb(192, 190, 190);
+  border-bottom: 1px dotted;
+}
+.footer .container .row div:first-child p {
+  border: none;
+}
+.footerCopyright {
+  background-color: #333;
+  color: #fff;
+  padding: 20px 0;
+  font-size: 12px;
+  align-self: start;
+  padding-left: 5vw;
+  /* padding-left: 70px; */
+}
+
+@media (max-width: 700px) {
+  .navbarBrand {
+    /* display: none; */
+    margin-right: 20px;
+  }
+  .navbarNav {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
