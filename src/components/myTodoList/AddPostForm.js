@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
-import * as actions from '../../actions/actions';
+import * as postActions from '../../actions/postActions';
 
 export const AddPostForm = ({ addPost }) => {
   const [post, setPost] = useState({
@@ -41,7 +41,7 @@ export const AddPostForm = ({ addPost }) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    addPost: (post) => dispatch(actions.addPost(post)),
+    addPost: (post) => dispatch(postActions.addPost(post)),
   };
 };
 

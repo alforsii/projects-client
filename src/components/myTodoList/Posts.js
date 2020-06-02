@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Progress } from 'antd';
 
-import * as actions from '../../actions/actions';
+import * as postActions from '../../actions/postActions';
 import AddPostForm from './AddPostForm';
 import UpdatePost from './UpdatePost';
 import styled from 'styled-components';
@@ -71,9 +71,9 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    getPosts: () => dispatch(actions.getPosts()),
-    deletePost: (id) => dispatch(actions.deletePost(id)),
-    updatePost: (id, updates) => dispatch(actions.updatePost(id, updates)),
+    getPosts: () => dispatch(postActions.getPosts()),
+    deletePost: (id) => dispatch(postActions.deletePost(id)),
+    updatePost: (id, updates) => dispatch(postActions.updatePost(id, updates)),
   };
 };
 

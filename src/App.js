@@ -1,8 +1,10 @@
 import React from 'react';
 import { Switch, Route, Link } from 'react-router-dom';
 import { connect } from 'react-redux';
+// import * as productActions from './actions/projectActions';
 
 import Home from './components/home/Home';
+import Projects from './components/projects/Projects';
 import ReveraLab from './myLabs/reveraLab/Revera.jsx';
 import Instagram from './myLabs/instagram/Instagram.jsx';
 import Spotify from './myLabs/spotify/Spotify.jsx';
@@ -15,6 +17,8 @@ class App extends React.Component {
     return (
       <div className="App">
         <Link to="/">Home</Link>
+        {' ... '}
+        <Link to="/projects">Projects</Link>
         {' ... '}
         <Link to="/labs/revera">Revera</Link>
         {' ... '}
@@ -29,6 +33,11 @@ class App extends React.Component {
         </a>
 
         <Switch>
+          <Route
+            exact
+            path="/projects"
+            render={(props) => <Projects {...props} />}
+          />
           <Route
             exact
             path="/labs/revera"
@@ -62,7 +71,9 @@ const mapStateToProps = (state) => {
 };
 
 const mapDispatchToProps = (dispatch) => {
-  return {};
+  return {
+    // getProjects: () => dispatch(productActions.getProjects),
+  };
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);

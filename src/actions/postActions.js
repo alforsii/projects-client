@@ -1,18 +1,11 @@
-import axios from 'axios';
-
+import { service } from '../auth/services/AuthServices';
 import {
   ADD_POST,
   GET_POSTS,
   UPDATE_POST,
   DELETE_POST,
   LOADING,
-} from './types';
-
-const BASE_URL = process.env.REACT_APP_BASE_URL;
-const service = axios.create({
-  baseURL: BASE_URL,
-  withCredentials: true,
-});
+} from './types/postTypes';
 
 // @Method GET `/posts`
 // @desc get all posts
