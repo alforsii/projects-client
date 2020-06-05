@@ -1,11 +1,11 @@
-import { service } from '../auth/services/AuthServices';
+import { service } from '../services/AuthServices';
 import {
   ADD_POST,
   GET_POSTS,
   UPDATE_POST,
   DELETE_POST,
   LOADING,
-} from './types/postTypes';
+} from '../types/postTypes';
 
 // @Method GET `/posts`
 // @desc get all posts

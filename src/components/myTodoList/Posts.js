@@ -2,12 +2,13 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Progress } from 'antd';
 
-import * as postActions from '../../actions/postActions';
+import * as postActions from '../../auth/actions/postActions';
 import AddPostForm from './AddPostForm';
 import UpdatePost from './UpdatePost';
 import styled from 'styled-components';
 import myPosts from './Posts.module.css';
 // import myAntd from 'antd/dist/antd.css';
+import 'antd/dist/antd.css';
 const AntComponent = styled.div``;
 
 const StyledButton = styled.button`

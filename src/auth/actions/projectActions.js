@@ -1,11 +1,11 @@
-import { service } from '../auth/services/AuthServices';
+import { service } from '../services/AuthServices';
 import {
   GET_PROJECTS,
   ADD_PROJECT,
   UPDATE_PROJECTS,
   DELETE_PROJECTS,
   LOADING,
-} from './types/projectTypes';
+} from '../types/projectTypes';
 
 export const getProjects = () => (dispatch) => {
   console.log('getProjects');

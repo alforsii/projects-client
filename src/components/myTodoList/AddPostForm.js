@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
-import * as postActions from '../../actions/postActions';
+import * as postActions from '../../auth/actions/postActions';
 
 export const AddPostForm = ({ addPost }) => {
   const [post, setPost] = useState({

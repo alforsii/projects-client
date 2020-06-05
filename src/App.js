@@ -1,22 +1,29 @@
 import React from 'react';
 import { Switch, Route, Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-// import * as productActions from './actions/projectActions';
+import { isLoggedIn } from './auth/actions/authActions';
 
 import Home from './components/home/Home';
+import AuthPop from './components/auth/AuthPop.js';
+
 import Projects from './components/projects/Projects';
-import ReveraLab from './myLabs/reveraLab/Revera.jsx';
-import Instagram from './myLabs/instagram/Instagram.jsx';
-import Spotify from './myLabs/spotify/Spotify.jsx';
-import IronCart from './myLabs/ironCart/IronCart.jsx';
+import ReveraLab from './components/myLabs/reveraLab/Revera.jsx';
+import Instagram from './components/myLabs/instagram/Instagram.jsx';
+import Spotify from './components/myLabs/spotify/Spotify.jsx';
+import IronCart from './components/myLabs/ironCart/IronCart.jsx';
 // import * as actions from './actions/actions';
 import './App.css';
 
 class App extends React.Component {
+  componentDidMount() {
+    this.props.isLoggedIn();
+  }
   render() {
     return (
       <div className="App">
         <Link to="/">Home</Link>
+        {' ... '}
+        <Link to="/dashboard">Dashboard</Link>
         {' ... '}
         <Link to="/projects">Projects</Link>
         {' ... '}
@@ -31,6 +38,8 @@ class App extends React.Component {
         <a id="btnGoBack" href="https://alforsii.github.io/redoLabs/">
           Labs_inOriginal_HTML
         </a>
+
+        <AuthPop />
 
         <Switch>
           <Route
@@ -58,7 +67,11 @@ class App extends React.Component {
             path="/labs/ironcart"
             render={(props) => <IronCart {...props} />}
           />
-          <Route exact path="/" render={(props) => <Home {...props} />} />
+          <Route
+            exact
+            path="/dashboard"
+            render={(props) => <Home {...props} user={this.props.user} />}
+          />
           <Route path="/labs/" render={(props) => props.history.goBack()} />
         </Switch>
       </div>
@@ -67,12 +80,14 @@ class App extends React.Component {
 }
 
 const mapStateToProps = (state) => {
-  return {};
+  return {
+    user: state.authReducer.user,
+  };
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    // getProjects: () => dispatch(productActions.getProjects),
+    isLoggedIn: () => dispatch(isLoggedIn()),
   };
 };
 

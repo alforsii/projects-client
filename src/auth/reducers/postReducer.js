@@ -4,7 +4,7 @@ import {
   UPDATE_POST,
   DELETE_POST,
   LOADING,
-} from '../actions/types/postTypes';
+} from '../types/postTypes';
 
 const initialState = {
   posts: [],
